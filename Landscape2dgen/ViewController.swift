@@ -56,7 +56,14 @@ func midPointDisplacement(start: Point, end: Point, roughtness: Float, verticalD
 
 
 class ViewController: UIViewController {
-
+    let colorDict: [Int: UIColor] = [0: UIColor(red: 195/255, green: 157/255, blue: 224/255, alpha: 1),
+                                     1: UIColor(red: 158/255, green:  98/255, blue: 204/255, alpha: 1),
+                                     2: UIColor(red: 130/255, green:  79/255, blue: 138/255, alpha: 1),
+                                     3: UIColor(red:  68/255, green:  28/255, blue:  99/255, alpha: 1),
+                                     4: UIColor(red:  49/255, green:   7/255, blue:  82/255, alpha: 1),
+                                     5: UIColor(red:  23/255, green:   3/255, blue:  38/255, alpha: 1),
+                                     6: UIColor(red: 240/255, green: 203/255, blue: 163/255, alpha: 1)]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
