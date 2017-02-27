@@ -50,7 +50,7 @@ func midPointDisplacement(start: Point, end: Point, roughtness: Float, verticalD
         vd *= pow(2, -roughtness)
         
         iteration += 1
-    }    
+    }
     return points
 }
 
@@ -62,6 +62,23 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    func drawLandscapeLayer(points: [Point], color: UIColor, width: CGFloat, height: CGFloat) {
+        let path = UIBezierPath()
+        color.setFill()
+        
+        path.move(to: CGPoint(x: CGFloat(points[0].x), y: CGFloat(points[0].y)))
+        
+        for i in 1..<points.count {
+            path.addLine(to: CGPoint(x: CGFloat(points[i].x), y: CGFloat(points[i].y)))
+        }
+        
+        path.addLine(to: CGPoint(x: width, y: height))
+        path.addLine(to: CGPoint(x: 0, y: height))
+        
+        path.close()
+        path.fill()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
