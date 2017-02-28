@@ -80,4 +80,39 @@ class LandscapeView: UIView {
         path.close()
         path.fill()
     }
+    
+    override func draw(_ rect: CGRect) {
+        let width = rect.width
+        let height = rect.height
+        
+        let layer1 = midPointDisplacement(start: Point(x: 0, y: 50),
+                                          end: Point(x: Float(width), y: 50),
+                                          roughtness: 1.4,
+                                          verticalDisplacement: 20,
+                                          numOfIterations: 9)
+        
+        let layer2 = midPointDisplacement(start: Point(x: 0, y: 180),
+                                          end: Point(x: Float(width), y: 80),
+                                          roughtness: 1.2,
+                                          verticalDisplacement: 30,
+                                          numOfIterations: 9)
+        
+        let layer3 = midPointDisplacement(start: Point(x: 0, y: 270),
+                                          end: Point(x: Float(width), y: 190),
+                                          roughtness: 1.0,
+                                          verticalDisplacement: 120,
+                                          numOfIterations: 8)
+        
+        let layer4 = midPointDisplacement(start: Point(x: 0, y: 350),
+                                          end: Point(x: Float(width), y: 320),
+                                          roughtness: 0.9,
+                                          verticalDisplacement: 250,
+                                          numOfIterations: 8)
+        
+        let layers = [layer1, layer2, layer3, layer4]
+        
+        for (i, layer) in layers.enumerated() {
+            drawLandscapeLayer(points: layer, color: colorDict[i]!, width: width, height: height)
+        }
+    }
 }
