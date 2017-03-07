@@ -85,28 +85,39 @@ class LandscapeView: UIView {
         let width = rect.width
         let height = rect.height
         
+        let backgroundColor = colorDict[6]
+        backgroundColor?.setFill()
+
+        let background = UIBezierPath()
+        background.move(to: CGPoint(x: 0, y: 0))
+        background.addLine(to: CGPoint(x: width, y: 0))
+        background.addLine(to: CGPoint(x: width, y: height))
+        background.addLine(to: CGPoint(x: 0, y: height))
+        background.close()
+        background.fill()
+        
         let layer1 = midPointDisplacement(start: Point(x: 0, y: 50),
                                           end: Point(x: Float(width), y: 50),
-                                          roughtness: 1.4,
-                                          verticalDisplacement: 20,
+                                          roughtness: 0.9,
+                                          verticalDisplacement: 250,
                                           numOfIterations: 9)
         
         let layer2 = midPointDisplacement(start: Point(x: 0, y: 180),
                                           end: Point(x: Float(width), y: 80),
-                                          roughtness: 1.2,
-                                          verticalDisplacement: 30,
+                                          roughtness: 1.0,
+                                          verticalDisplacement: 120,
                                           numOfIterations: 9)
         
         let layer3 = midPointDisplacement(start: Point(x: 0, y: 270),
                                           end: Point(x: Float(width), y: 190),
-                                          roughtness: 1.0,
-                                          verticalDisplacement: 120,
+                                          roughtness: 1.2,
+                                          verticalDisplacement: 30,
                                           numOfIterations: 8)
         
         let layer4 = midPointDisplacement(start: Point(x: 0, y: 350),
                                           end: Point(x: Float(width), y: 320),
-                                          roughtness: 0.9,
-                                          verticalDisplacement: 250,
+                                          roughtness: 1.4,
+                                          verticalDisplacement: 20,
                                           numOfIterations: 8)
         
         let layers = [layer1, layer2, layer3, layer4]
