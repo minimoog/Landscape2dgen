@@ -20,6 +20,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func onRegenerate(_ sender: UIButton) {
+        view.setNeedsDisplay()
+    }
+    
+    @IBAction func onSave(_ sender: UIButton) {
+    }
 }
 
