@@ -21,6 +21,14 @@ extension Array {
     }
 }
 
+extension Int {
+    func random() -> Int {
+        let randomNumber = Int(arc4random_uniform(UInt32(self)))
+        
+        return randomNumber
+    }
+}
+
 func midPointDisplacement(start: Point, end: Point, roughtness: Float, verticalDisplacement: Float = 0.0, numOfIterations: Int = 16) -> [Point] {
     var vd = verticalDisplacement
     
@@ -95,6 +103,7 @@ class LandscapeView: UIView {
         background.addLine(to: CGPoint(x: 0, y: height))
         background.close()
         background.fill()
+        
         
         let layer1 = midPointDisplacement(start: Point(x: 0, y: 50),
                                           end: Point(x: Float(width), y: 50),
