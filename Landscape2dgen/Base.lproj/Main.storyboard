@@ -22,6 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="afL-Q7-ZhP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcv-Ba-Rnu">
                                 <rect key="frame" x="16" y="629" width="101" height="30"/>
                                 <constraints>
@@ -42,16 +45,16 @@
                                     <action selector="onSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XCK-Zu-gCE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afL-Q7-ZhP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="afL-Q7-ZhP" secondAttribute="bottom" id="7NF-uB-W69"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wcv-Ba-Rnu" secondAttribute="bottom" constant="8" symbolic="YES" id="8Bm-fp-jB6"/>
                             <constraint firstItem="Wkb-6C-81p" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Fop-C0-ByM"/>
+                            <constraint firstItem="afL-Q7-ZhP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VCg-JU-cWG"/>
+                            <constraint firstAttribute="trailing" secondItem="afL-Q7-ZhP" secondAttribute="trailing" id="Yal-Sv-SEk"/>
                             <constraint firstItem="Wkb-6C-81p" firstAttribute="baseline" secondItem="Wcv-Ba-Rnu" secondAttribute="baseline" id="j49-3x-z2J"/>
+                            <constraint firstItem="afL-Q7-ZhP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jck-G2-Yb9"/>
                             <constraint firstItem="Wcv-Ba-Rnu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mgV-Zx-UUO"/>
                         </constraints>
                     </view>
