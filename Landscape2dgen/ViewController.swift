@@ -90,6 +90,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onSave(_ sender: UIButton) {
+        guard let image = image else {
+            return
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     
     func drawLandscapeLayer(points: [Point], color: UIColor, width: CGFloat, height: CGFloat) {
