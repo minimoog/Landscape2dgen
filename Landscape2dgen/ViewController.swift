@@ -133,44 +133,31 @@ class ViewController: UIViewController {
             background.close()
             background.fill()
             
-            //736 414
-            let layer1height: Int
-            let layer2height: Int
-            let layer3height: Int
-            let layer4height: Int
+            let layer1height = Int(1 / 5 * height)
+            let layer2height = Int(2 / 5 * height)
+            let layer3height = Int(3 / 5 * height)
+            let layer4height = Int(4 / 5 * height)
             
-            if height <= width {
-                layer1height = Int(1 / 5 * height)
-                layer2height = Int(2 / 5 * height)
-                layer3height = Int(3 / 5 * height)
-                layer4height = Int(4 / 5 * height)
-            } else {
-                layer1height = Int(1 / 5 * width)
-                layer2height = Int(2 / 5 * width)
-                layer3height = Int(3 / 5 * width)
-                layer4height = Int(4 / 5 * width)
-            }
-            
-            let layer1 = midPointDisplacement(start: Point(x: 0, y: 50),
-                                              end: Point(x: Float(width), y: Float(layer1height.random())),
+            let layer1 = midPointDisplacement(start: Point(x: 0, y: Float(layer1height + 20.random() - 10)),
+                                              end: Point(x: Float(width), y: Float(layer1height + 20.random() - 10)),
                                               roughtness: 0.9,
-                                              verticalDisplacement: 250,
+                                              verticalDisplacement: 80,
                                               numOfIterations: 9)
             
-            let layer2 = midPointDisplacement(start: Point(x: 0, y: 180),
-                                              end: Point(x: Float(width), y: Float(layer2height.random())),
+            let layer2 = midPointDisplacement(start: Point(x: 0, y: Float(layer2height + 20.random() - 10)),
+                                              end: Point(x: Float(width), y: Float(layer2height + 20.random() - 10)),
                                               roughtness: 1.0,
-                                              verticalDisplacement: 120,
+                                              verticalDisplacement: 60,
                                               numOfIterations: 9)
             
-            let layer3 = midPointDisplacement(start: Point(x: 0, y: 270),
-                                              end: Point(x: Float(width), y: Float(layer3height.random())),
+            let layer3 = midPointDisplacement(start: Point(x: 0, y: Float(layer3height + 20.random() - 10)),
+                                              end: Point(x: Float(width), y: Float(layer3height + 20.random() - 10)),
                                               roughtness: 1.2,
                                               verticalDisplacement: 30,
                                               numOfIterations: 8)
             
-            let layer4 = midPointDisplacement(start: Point(x: 0, y: 350),
-                                              end: Point(x: Float(width), y: Float(layer4height.random())),
+            let layer4 = midPointDisplacement(start: Point(x: 0, y: Float(layer4height + 20.random() - 10)),
+                                              end: Point(x: Float(width), y: Float(layer4height + 20.random() - 10)),
                                               roughtness: 1.4,
                                               verticalDisplacement: 20,
                                               numOfIterations: 8)
