@@ -90,11 +90,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onSave(_ sender: UIButton) {
-        guard let image = image else {
+        guard let image = imageView.image else {
             return
         }
         
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imageOnSave(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    func imageOnSave(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "The image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
     
     func drawLandscapeLayer(points: [Point], color: UIColor, width: CGFloat, height: CGFloat) {
